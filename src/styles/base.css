@@ -1,0 +1,51 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --pink: #d01943;
+    ;
+    --darkPink: #9f0116;
+    --white: white;
+    --black: black;
+}
+
+body {
+    overflow: hidden;
+    color: white;
+    font-family: "Alice", serif;
+
+}
+
+
+h1 {
+    font-size: 36px;
+}
+
+h3 {
+    font-size: 36px;
+    text-align: center;
+}
+
+li {
+    list-style: none;
+    color: var(--pink);
+
+    padding: 20px 0;
+    border-bottom: 1px solid pink;
+}
+
+label {
+    margin-top: 20px;
+}
+
+
+button {
+    padding: 7px 20px;
+    margin: 25px 0;
+    background: var(--darkPink);
+    border: 1px solid var(--pink);
+    color: var(--white);
+}
