@@ -1,5 +1,315 @@
 @import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
 
+/* ================= Layout ================= */
+
+.iceCream-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+.ice-cream-bg {
+    width: 60%;
+}
+
+.ice-cream-bg img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+/* ================= Form Container ================= */
+
+.wizard-form-conatiner {
+    position: relative;
+    width: 40%;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: var(--darkPink);
+    margin-top: -100px;
+    z-index: 1;
+}
+
+.wizard-form-conatiner::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: url(../assets/images/formBg.png) no-repeat bottom center;
+    z-index: -1;
+}
+
+/* ================= Form Layout ================= */
+
+.wizard-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.step-content {
+    font-size: 25px;
+}
+
+/* ================= Step Indicator ================= */
+
+.progress-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-bottom: 25px;
+    position: relative;
+}
+
+.progress-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 14%;
+    width: 72%;
+    height: 3px;
+    background: #ffd1dd;
+    z-index: -1;
+}
+
+.progress-step {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: 3px solid var(--pink);
+    color: var(--pink);
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    transition: 0.3s ease;
+}
+
+.progress-step.active {
+    background: var(--pink);
+    color: white;
+    border-color: var(--pink);
+    transform: scale(1.1);
+}
+
+/* ================= Dropdown ================= */
+
+/* Wrapper */
+.custom-dropdown {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    text-align: left;
+}
+
+/* Selected Box */
+.dropdown-selected {
+    border: 1px solid #e16076;
+    padding: 10px;
+    cursor: pointer;
+    background: #fff;
+    position: relative;
+    border-radius: 4px;
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #e16076;
+    border-radius: 4px;
+    margin-top: 3px;
+    max-height: 180px;
+    overflow-y: auto;
+    z-index: 999;
+    text-align: left;
+}
+
+/* Fix global li issue */
+.dropdown-menu li {
+    padding: 10px 12px;
+    border-bottom: 1px solid #ffe3e3;
+    color: var(--pink);
+    background: white;
+    cursor: pointer;
+    list-style: none;
+}
+
+.dropdown-menu li:last-child {
+    border-bottom: none;
+}
+
+.dropdown-menu li:hover {
+    background: #ffe6ec;
+}
+
+/* ================= Forms ================= */
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.btns {
+    display: flex;
+    gap: 20px;
+}
+
+/* ================= Responsive ================= */
+
+@media (max-width: 1300px) {
+    .iceCream-container {
+        flex-direction: column;
+    }
+
+    .ice-cream-bg {
+        width: 100%;
+    }
+
+    .wizard-form-conatiner {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .step-content {
+        font-size: 20px;
+    }
+
+    .progress-step {
+        width: 38px;
+        height: 38px;
+        font-size: 16px;
+    }
+}
+
+
+.summary-container {
+    text-align: center;
+    color: var(--darkPink);
+    padding: 20px;
+}
+
+.thank-you-title {
+    font-size: 32px;
+    margin-bottom: 10px;
+    color: var(--pink);
+}
+
+.thank-you-subtitle {
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.order-summary-box {
+    border: 2px solid var(--pink);
+    padding: 20px;
+    border-radius: 10px;
+    background: #fff7fa;
+    margin: 0 auto;
+    width: 80%;
+}
+
+.order-summary-box h3 {
+    margin-bottom: 15px;
+}
+
+.order-summary-box ul li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ffd2dd;
+    color: var(--darkPink);
+    font-size: 18px;
+}
+
+.order-summary-box ul li:last-child {
+    border-bottom: none;
+}
+
+.enjoy-text {
+    margin-top: 20px;
+    font-size: 20px;
+    color: var(--pink);
+}
+
+
+/* confettli */
+
+/* Floating Ice Creams */
+.floating-icecream {
+    position: absolute;
+    width: 90px;
+    z-index: 2;
+    animation: float 4s ease-in-out infinite;
+    opacity: 0.9;
+}
+
+.ice1 {
+    top: 10%;
+    left: -20px;
+    animation-delay: 0s;
+}
+
+.ice2 {
+    top: 40%;
+    right: -25px;
+    animation-delay: 1.2s;
+}
+
+.ice3 {
+    bottom: 10%;
+    left: 30%;
+    animation-delay: 0.6s;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* summary */
+
+.summary-container {
+    position: relative;
+    overflow: visible;
+}
+
+
+/* reset */
+.reset-btn {
+    margin-top: 25px;
+    padding: 10px 25px;
+    border-radius: 8px;
+    background: var(--pink);
+    color: white;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.reset-btn:hover {
+    background: var(--darkPink);
+    transform: scale(1.05);
+}
+
+
+
+/* @import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+
 .iceCream-container {
     width: 100%;
     height: 100%;
@@ -18,16 +328,7 @@
     max-width: 100%;
 }
 
-/* .iceCream-container::before {
-    position: absolute;
-    content: '';
-    background-image: url(../assets/images/bg1.jpg);
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
+
 
 .wizard-form-conatiner {
     position: relative;
@@ -37,8 +338,7 @@
     justify-content: center;
     align-items: center;
     background-color: white;
-    /* background-image: url(../assets/images/bg2.jpg); */
-    /* background: linear-gradient(45deg, #6e4f4f, #7a3333e0); */
+    
     color: var(--darkPink);
     z-index: 0;
     margin-top: -100px;
@@ -62,8 +362,7 @@
 .wizard-form {
     display: flex;
     flex-direction: column;
-    /* background: linear-gradient(45deg, white, #ffffffd9); */
-    /* gap: 50px; */
+   
 }
 
 .step-content {
@@ -91,7 +390,7 @@
 
 form {
     display: flex;
-    /* gap: 20px; */
+
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -100,4 +399,4 @@ form {
 .btns{
         display: flex;
     gap: 20px;
-}
+} */
